@@ -4,19 +4,19 @@ kind: Namespace
 metadata:
   name: prom-oper
 ---
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: prom-oper
-#  namespace: prom-oper
-#spec:
-#  project: prom-oper
-#
-#  source:
-#    repoURL: https://prometheus-community.github.io/helm-charts
-#    targetRevision: "13.2.1"
-#    chart: kube-prometheus-stack
-#
-#  destination:
-#      #server: https://kubernetes.default.svc
-#    namespace: prom-oper
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prom-oper
+  namespace: prom-oper
+spec:
+  project: prom-oper
+
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: "13.2.1"
+    chart: kube-prometheus-stack
+
+  destination:
+      #server: https://kubernetes.default.svc
+    namespace: prom-oper
