@@ -1,10 +1,10 @@
 ---
-apiVersion: argoproj.io/v1alpha1
+apiVersion: v1
 kind: Namespace
 metadata:
   name: redis
 ---
-apiVersion: argoproj.io/v1alpha1
+apiVersion: v1
 kind: Application
 metadata:
   name: redis
