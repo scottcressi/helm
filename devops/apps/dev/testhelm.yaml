@@ -1,23 +1,12 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: redis
----
-apiVersion: apps/v1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: redis
-  namespace: redis
-  annotations:
-    fluxcd.io/automated: "true"
-    fluxcd.io/locked: "true"
+  name: prom-oper
+  namespace: prom-oper
 spec:
-  releaseName: redis
-  chart:
-    repository: https://charts.bitnami.com/bitnami
-    name: redis
-    version: 14.1.1
-  values:
-    auth:
-      password: test
+  project: prom-oper
+
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: "13.2.1"
+    chart: kube-prometheus-stack
