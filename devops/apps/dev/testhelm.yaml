@@ -12,5 +12,5 @@ spec:
     chart: kube-prometheus-stack
 
   destination:
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
     namespace: prom-oper
