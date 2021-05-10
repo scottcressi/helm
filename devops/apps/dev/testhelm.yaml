@@ -1,14 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Namespace
+metadata:
+  name: redis
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: declarative
-  namespace: argocd
+  name: redis
+  namespace: redis
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/locked: "true"
 spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/mifonpe/helmbasics'
-    path: .
-    targetRevision: HEAD
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: default
+  releaseName: redis
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: redis
+    version: 14.1.1
+  values:
+    auth:
+      password: test
