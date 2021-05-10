@@ -1,22 +1,22 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: prom-oper
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prom-oper
-  namespace: prom-oper
+  name: prometheus
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
-  project: prom-oper
-
+  project: production
   source:
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: "13.2.1"
-    chart: kube-prometheus-stack
-
+    path: charts/prometheus
+    repoURL: https://github.com/prometheus-community/helm-charts
+    targetRevision: HEAD
   destination:
+    namespace: monitoring
     server: https://kubernetes.default.svc
-    namespace: prom-oper
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
