@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: elasticsearch
+  name: redis
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: elasticsearch
+    namespace: redis
     #server: {{ .Values.cluster }}
   #project: {{ .Values.project }}
   source:
-    chart: elasticsearch
+    chart: redis
     #helm:
     #  valueFiles:
     #  - values.yaml
-    repoURL: https://helm.elastic.co
-    targetRevision: 7.6.1
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 14.1.1
