@@ -7,7 +7,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: default
+  project: devops-apps
   source:
     chart: prometheus
     helm:
