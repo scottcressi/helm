@@ -1,17 +1,22 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: prometheus-operator
-#  namespace: argocd
-#spec:
-#  destination:
-#    namespace: default
-#    server: https://kubernetes.default.svc
-#  project: devops-apps
-#  source:
-#    chart: prometheus-operator
-#    repoURL: https://kubernetes-charts.storage.googleapis.com
-#    targetRevision: 9.3.0
-#  syncPolicy:
-#    automated:
-#      prune: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  project: default
+  source:
+    chart: prometheus
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 13.0.2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
