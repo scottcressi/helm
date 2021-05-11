@@ -10,7 +10,7 @@ metadata:
   name: guestbook-ui
   namespace: test
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -25,3 +25,9 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
+          # test comment
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test2
