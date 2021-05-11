@@ -1,17 +1,17 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prometheus-operator
-  namespace: argocd
-spec:
-  destination:
-    namespace: default
-    server: https://kubernetes.default.svc
-  project: devops-apps
-  source:
-    chart: prometheus-operator
-    repoURL: https://kubernetes-charts.storage.googleapis.com
-    targetRevision: 9.3.0
-  syncPolicy:
-    automated:
-      prune: true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: prometheus-operator
+#  namespace: argocd
+#spec:
+#  destination:
+#    namespace: default
+#    server: https://kubernetes.default.svc
+#  project: devops-apps
+#  source:
+#    chart: prometheus-operator
+#    repoURL: https://kubernetes-charts.storage.googleapis.com
+#    targetRevision: 9.3.0
+#  syncPolicy:
+#    automated:
+#      prune: true
