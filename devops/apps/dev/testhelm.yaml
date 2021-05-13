@@ -11,7 +11,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: in-cluster
+    name: prod
     namespace: prometheus
   project: devops-apps
   source:
