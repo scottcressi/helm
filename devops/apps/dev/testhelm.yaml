@@ -43,7 +43,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: prod
+    name: dev
     namespace: kubewatch
   project: devops-apps
   source:
