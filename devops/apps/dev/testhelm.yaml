@@ -41,7 +41,6 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
     name: dev
