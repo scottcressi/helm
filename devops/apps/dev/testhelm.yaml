@@ -9,8 +9,6 @@ kind: Application
 metadata:
   name: prometheus
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: prod
@@ -39,8 +37,6 @@ kind: Application
 metadata:
   name: kubewatch
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: dev
