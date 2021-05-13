@@ -39,7 +39,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: dev
+    name: prod
     namespace: kubewatch
   project: devops-apps
   source:
