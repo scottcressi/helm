@@ -11,7 +11,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name: prod
     namespace: prometheus
   project: devops-apps
   source:
