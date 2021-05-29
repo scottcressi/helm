@@ -13,7 +13,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: prod
+    server: https://kubernetes.default.svc
     namespace: prometheus
   project: devops-apps
   source:
@@ -43,7 +43,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: dev
+    server: https://kubernetes.default.svc
     namespace: kubewatch
   project: devops-apps
   source:
