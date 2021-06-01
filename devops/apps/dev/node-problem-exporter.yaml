@@ -17,7 +17,7 @@ spec:
     namespace: node-problem-detector
   project: devops-apps
   source:
-    chart: deliveryhero/node-problem-detector
+    chart: node-problem-detector
     helm:
       values: |
         metrics:
@@ -27,7 +27,7 @@ spec:
               app: helm-helm-exporter
               release: prometheus-operator
     repoURL: https://charts.deliveryhero.io/
-    targetRevision: 2.0.2
+    targetRevision: 1.8.6
   syncPolicy:
     automated:
       prune: true
