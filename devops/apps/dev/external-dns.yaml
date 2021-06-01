@@ -28,8 +28,8 @@ spec:
           enabled: true
         aws:
           credentials:
-            #accessKey: ${aws_iam_access_key.external_dns.id}
-            #secretKey: ${aws_iam_access_key.external_dns.secret}
+            accessKey: foo
+            secretKey: foo
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 3.3.0
   syncPolicy:
