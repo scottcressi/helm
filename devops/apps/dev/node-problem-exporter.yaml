@@ -17,7 +17,7 @@ spec:
     namespace: node-problem-detector
   project: devops-apps
   source:
-    chart: node-problem-detector
+    chart: deliveryhero/node-problem-detector
     helm:
       values: |
         metrics:
