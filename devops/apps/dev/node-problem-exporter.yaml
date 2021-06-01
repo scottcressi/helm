@@ -26,8 +26,8 @@ spec:
             additionalLabels:
               app: helm-helm-exporter
               release: prometheus-operator
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 1.8.6
+    repoURL: https://charts.deliveryhero.io/
+    targetRevision: 2.0.2
   syncPolicy:
     automated:
       prune: true
