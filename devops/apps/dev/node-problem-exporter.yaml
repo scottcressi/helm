@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: node-problem-detector
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubewatch
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: node-problem-detector
+  project: devops-apps
+  source:
+    chart: node-problem-detector
+    helm:
+      values: |
+        metrics:
+          serviceMonitor:
+            enabled: true
+            additionalLabels:
+              app: helm-helm-exporter
+              release: prometheus-operator
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 1.8.6
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
