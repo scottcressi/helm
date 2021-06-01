@@ -27,7 +27,7 @@ spec:
               app: helm-helm-exporter
               release: prometheus-operator
     repoURL: https://charts.deliveryhero.io/
-    targetRevision: 2.0.1
+    targetRevision: 2.0.2
   syncPolicy:
     automated:
       prune: true
