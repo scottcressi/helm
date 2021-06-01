@@ -28,8 +28,8 @@ spec:
           enabled: true
         aws:
           credentials:
-            accessKey: vault:secret/data/external-dns#ACCESSKEY
-            secretKey: vault:secret/data/external-dns#SECRETKEY
+            accessKey: 172.20.17.156:secret/data/external-dns#ACCESSKEY
+            secretKey: 172.20.17.156:secret/data/external-dns#SECRETKEY
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 3.3.0
   syncPolicy:
