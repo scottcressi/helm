@@ -16,8 +16,14 @@ spec:
     server: https://kubernetes.default.svc
     namespace: external-dns
   project: devops-apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   source:
     chart: external-dns
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 3.3.0
     helm:
       values: |
         rbac:
@@ -30,9 +36,3 @@ spec:
           credentials:
             accessKey: 172.20.17.156:secret/data/external-dns#ACCESSKEY
             secretKey: 172.20.17.156:secret/data/external-dns#SECRETKEY
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 3.3.0
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true

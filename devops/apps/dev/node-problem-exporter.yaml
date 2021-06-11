@@ -16,8 +16,14 @@ spec:
     server: https://kubernetes.default.svc
     namespace: node-problem-detector
   project: devops-apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   source:
     chart: node-problem-detector
+    targetRevision: 2.0.2
+    repoURL: https://charts.deliveryhero.io/
     helm:
       values: |
         metrics:
@@ -26,9 +32,3 @@ spec:
             additionalLabels:
               app: helm-helm-exporter
               release: prometheus-operator
-    repoURL: https://charts.deliveryhero.io/
-    targetRevision: 2.0.2
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
